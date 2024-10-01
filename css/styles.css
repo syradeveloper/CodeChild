@@ -29,6 +29,10 @@ header {
     backdrop-filter: blur(10px);
 }
 
+a {
+    text-decoration: none;
+}
+
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
@@ -108,11 +112,13 @@ p {
     transition: transform 0.3s ease;
     box-sizing: border-box;
     text-align: center;
+    text-decoration: none;
+    color: var(--text-color);
 }
 
 .star {
     position: absolute;
-    top: -15px;
+    top: 5px;
     right: 10px;
     font-size: 1.5rem; 
     transform-origin: center;
@@ -190,19 +196,54 @@ p {
     transform: translateZ(-35px);
 }
 
-.about-card:hover, .about-card-special:hover {
+.about-card-special-mono {
+    flex: 1 1 calc(33% - 20px);
+    background: #333333;
+    border-radius: 20px;
+    padding: 2rem;
+    margin: 0;
+    transition: transform 0.5s ease;
+    box-sizing: border-box;
+    text-align: center;
+    color: #ffffff;
+    transform: translateZ(-35px);
+}
+
+.about-card-special-mono .badge {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background-color: #ff5722;
+    color: #fff;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.about-card:hover, .about-card-special:hover, .about-card-special-mono:hover {
     transform: translateZ(0); 
 }
 
-.about-card h3, .about-card-special h3 {
+.about-card h3, .about-card-special h3, .about-card-special-mono h3 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
 }
 
-.about-card p, .about-card-special p {
+.about-card p, .about-card-special p, .about-card-special-mono p {
     text-align: center;
     font-size: 1.1rem;
     line-height: 1.5;
+}
+
+.about-card li, .about-card-special li, .about-card-special-mono li {
+    position: relative;
+    text-align: left;
+    margin-bottom: 0.5rem;
+    padding-left: .2rem;
+    font-size: 1.1rem;
 }
 
 footer {
@@ -250,4 +291,9 @@ footer p {
 
 .scroll-to-top-btn.hidden {
     opacity: 0; 
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
 }
